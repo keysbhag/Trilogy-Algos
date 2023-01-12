@@ -31,5 +31,11 @@ var mergeSorted = function (arr1, arr2) {
     idx2++;
   }
 
-  return result;
+  console.log(result);
 };
+
+
+var arr1 = [1, 8, 15, 16, 23, 42];
+var arr2 = [1, 2, 3, 6, 20, 21];
+
+mergeSorted(arr1, arr2);
