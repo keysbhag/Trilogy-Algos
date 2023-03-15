@@ -1,17 +1,26 @@
 // Write code to create a function that accepts a string and returns an object containing the number of times each character appears in the string
 
-var characterCount = function(str) {
-  var charMap = {};
-
-  for (var i = 0; i < str.length; i++) {
-    var char = str[i];
-
-    if (char in charMap) {
-      charMap[char]++;
+var majorityElement = function (nums) {
+  let numMap = {};
+  
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+    if (num in numMap) {
+      numMap[num]++
     } else {
-      charMap[char] = 1;
+      numMap[num] = 1;
+    }
+  }
+  let highestNum = nums[0];
+
+  for (let num in numMap){
+    if (numMap[num] > numMap[highestNum]){
+      highestNum = num
     }
   }
 
-  return charMap;
+  console.log(highestNum);
+  console.log(numMap);
 };
+
+majorityElement([2, 2, 1, 1, 1, 2, 2]);
